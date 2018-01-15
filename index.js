@@ -1,11 +1,11 @@
-const port = process.env.PORT || 80;
 const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
 const app = express();
+const port = process.env.PORT || 80
+
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-// realizando conexion con la bd
+
 mongoose.connect('mongodb://localhost/productos', { useMongoClient: true });
 
 var productosSchemaJSON = {
@@ -97,10 +97,6 @@ app.delete('/eliminar/:_id', (req, res) => {
 
 
 
-
-
-
- 
 var mysql = require('mysql');
 var connection = mysql.createConnection({
     host: 'localhost',
